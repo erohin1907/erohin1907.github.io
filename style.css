@@ -1,0 +1,177 @@
+<!-- начало стиля меню -->
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+header {
+  background-color: #3237c6;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 4px;
+  font-size: large;
+}
+nav {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: hidden;
+}
+.logo-box {
+  float: left;
+  margin-left: 25px;
+}
+.logo {
+  margin: 0;
+  height: 70px;
+  text-align: center;
+}
+.menu {
+  margin: 0;
+  margin-right: 25px;
+  padding-left: 0;
+  list-style: none;
+  float: right;
+  height: 70px;
+  line-height: 70px;
+  text-align:center;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+li a {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.menu_item {
+  display: inline-block;
+  margin-left: 25px;
+  transition: .5s linear;
+  padding-left: 15px;
+  padding-right: 5px;
+}
+li a:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  background: #ffffff;
+  transition: all 0.5s linear;  
+}
+li a:hover:after{
+  width: 100%;
+}
+@media screen and (max-width:574px) {
+  .logo-box {
+    float: none;
+    margin: 0 auto;
+  }
+  ul {
+    float: none;
+    margin: 0 25px;
+    }
+ li:first-of-type {margin-left:0}
+}
+
+@media screen and (max-width:493px) {
+nav {
+  overflow: visible
+}
+ul {
+  height: auto;
+  margin: 25px 25px 0 25px;
+  line-height: 50px;
+}
+li {
+  display: block;
+  margin: 0;
+}
+li:hover {
+  background: rgba(0,0,0,.1)
+}
+li a:after {
+  content: none;
+}
+}
+<!-- конец стиля меню -->
+#prices{
+    width: 100%;
+    max-width: 920px;
+    margin:0 auto;
+    font-family: 'Montserrat', sans-serif;
+    color: #3237c6;
+    font-weight: 600;
+}
+.coaches{
+background-color: #C6FCEC;
+}
+.trainers{
+    display: flex;
+    justify-content: space-evenly;
+}
+.trainers_item{
+    display: inline-block;
+    width: 30%;
+    max-width: 250px;
+}
+.trainers_img{
+    border-radius: 50%;
+    text-align: center;
+    max-width: 250px;
+}
+.trainers_name{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #4F8073;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    max-width: 250px;
+    padding-top: 25px;
+    padding-bottom: 7px;
+}
+.trainers_description{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #4F8073;
+    max-width: 250px;
+    font-size: 18px;
+}
+.gallery{
+    background-color: #C6FCEC;
+    padding-bottom:100px;
+}
+.gallery_slider{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.contacts{
+    background-color: #68BAA5;
+    padding-bottom: 120px;
+}
+.tdtext{
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+#contactstable{
+    width: 100%;
+    max-width: 920px;
+    margin:0 auto;
+}
+#yandexmaps{
+    width: 450px;
+}
+
+
+
+
+footer {
+  background-color: #3237c6;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 4px;
+  font-size: large;
+  height: auto;
+  width: ;
+}
