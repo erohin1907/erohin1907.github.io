@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth;">
+	<head>
+		<script>history.scrollRestoration = "manual"</script>
+		<script src="libs/jquery-3.6.1.min.js"></script>
+		<script src="main.js"></script>
+		<link rel="stylesheet" href="libs/slick/slick.css">
+		<link rel="stylesheet" href="libs/slick/slick-theme.css">
+		<script src="libs/slick/slick.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Детский бассейн "Ручеёк"</title>
+		<meta charset="utf-8">
+		<meta name="keywords" content="детский, бассейн, новосибирск, новосибирске, детский бассейн, плавание, малая чаша, большая чаша, Крылова 20, Ручеёк, ручеек, Ручеек, ручеёк, детский бассейн ручеек новосибирск">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="icon" type="image/png" sizes="48x48" href="photos/favicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+		
+	</head>
+	<body style="margin: 0px; scroll-behavior: smooth;">
+		<div class="main" id="m1">
+			<div id="startpage" style="background-image: url(photos/background.jpeg);width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover; display: flex; flex-direction: column; justify-content: space-between;">
+				<header>
+					<nav>
+						<div class="nav-li">
+							<a href="#mi1" class="nav-a">услуги</a>
+						</div>
+						<div class="nav-li">
+							<a href="#mi2" class="nav-a">инструкторы</a>
+						</div>
+						<div class="nav-li">
+							<a href="#mi3" class="nav-a">галерея</a>
+						</div>
+						<div class="nav-li">
+							<a href="#mi4" class="nav-a">контакты</a>
+						</div>
+					</nav>
+				</header>
+				<div class="infoblok" style="width: 50%; float: left; margin-left: 75px;">
+					<div class="startpageheader" style="font-family: 'BN', sans-serif; color: #ffffff; font-size: 65px; font-weight: 600; letter-spacing: 3px;">Доверьте своего малыша профессионалам</div>
+					<div class="descriptiontext" style="font-family: 'Montserrat', sans-serif; color: #ffffff; font-size: 25px; padding-top: 20px; letter-spacing: 1.5px;">Запишитесь на бесплатное пробное занятие в бассейн "Ручеёк"</div>
+					<button class="popupbutton trigger">Записаться</button>
+				</div>
+				<!-- МОДАЛЬНОЕ ОКНО-->
+				<div class="modal-wrapper">
+				  <div class="head"></div>
+				  <div class="modal">
+				    <div class="content">
+				        <div class="good-job">
+				          <p class="p-mdl">ОСТАВЬТЕ СВОИ ДАННЫЕ И МЫ С ВАМИ СВЯЖЕМСЯ</p>
+				          <form class="form_modal_window" action="">
+				            <input type="text" name="name" placeholder="Ваше ФИО" required>
+				            <input type="email" name="email" placeholder="Ваш email" required>
+				            <input style="margin-bottom: 30px;" type="phone" name="phone" placeholder="Ваш телефон" required>
+				            <input class="form_sub" name="sub" type="submit" value="ОТПРАВИТЬ">
+				          </form>
+				          <div id="erconts"></div>
+				        </div>
+				    </div>
+				  </div>
+				</div>
+				<!--AJAX СКРИПТ ДЛЯ ФОРМЫ-->
+				    <script>
+				      $(document).ready(function() {
+				          $('.form_sub').click(function(){
+				              $.ajax({
+				                  type: "POST", //указываем что метод отправки POST
+				                  url:"form.php", // указываем адрес обработчика
+				                  data:$('.form_modal_window').serialize(), //указываем данные которые будут передаваться обработчику
+				                /* Мы указываем id формы - $('#callbacks'), и методом serialize() забираем значения всех полей. */
+				                  error:function(){$("#erconts").html("Произошла ошибка!");},
+				                /* если произойдет ошибка в элементе с id erconts выведется сообщение*/
+				                  beforeSend: function() {
+				                      $("#erconts").html("<p style='color: orangered;'>Отправляем данные...</p>");
+				                  },
+				                  success: function(result){
+				                    /* В случае удачной обработки и отправки выполнится следующий код*/
+				                      $('#erconts').html(result);
+				                      checkThis();
+				                  }
+				              });
+				              return false;
+				          });
+				      });
+				    </script>
+				<div class="benefits">
+					<div class="benefits_item">
+						<div class="benefits_item_img">
+							<img src="photos/icons/profi.png" style="width: 4vw; height:4vw;">
+						</div>
+						<div class="benefits_item_text">Команда профессионалов</div>
+					</div>
+					<div class="benefits_item">
+						<div class="benefits_item_img">
+							<img src="photos/icons/sp.png" style="width: 4vw; height:4vw;">
+						</div>
+						<div class="benefits_item_text">Тёплый и чистый бассейн</div>
+					</div>
+					<div class="benefits_item">
+						<div class="benefits_item_img">
+							<img src="photos/icons/cg.png" style="width: 4vw; height:4vw;">
+						</div>
+						<div class="benefits_item_text">Расположение в центре города</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pricelist" id="mi1">
+			<h1 align="center" class="body-hdr">Услуги</h1>
+			<div class="pricelisttable">
+				<div class="pricetable">
+					<div class="pricebox">
+						<div class="zagolovok">
+							<div class="zagolovoktext">Персональные занятия</div>
+						</div>
+						<div class="pricetr">
+							<div class="usluga">1 занятие</div>
+							<div class="coast">	950 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">4 занятия</div>
+							<div class="coast">3400 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">8 занятий</div>
+							<div class="coast">6400 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">12 занятий</div>
+							<div class="coast">	9000 ₽</div>
+						</div>
+					</div>
+					<div class="pricebox">
+						<div class="zagolovok">
+							<div class="zagolovoktext">"Мама + малыш"</div>
+						</div>
+						<div class="pricetr">
+							<div class="usluga">1 занятие</div>
+							<div class="coast">1100 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">4 занятия</div>
+							<div class="coast">4000 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">8 занятий</div>
+							<div class="coast">6800 ₽</div>
+						</div>
+					</div>
+				
+				</div>
+				<div class="pricetable">
+					<div class="pricebox">
+						<div class="zagolovok">
+							<div class="zagolovoktext" id="zagolovok-scnd">Групповые занятия</div>
+						</div>
+						<div class="pricetr">
+							<div class="usluga">1 занятие</div>
+							<div class="coast">700 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">4 занятия</div>
+							<div class="coast">2400 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">8 занятий</div>
+							<div class="coast">4500 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">12 занятий</div>
+							<div class="coast">6400 ₽</div>
+						</div>
+					</div>
+					<div class="pricebox">
+						<div class="zagolovok">
+							<div class="zagolovoktext">Соляная пещера</div>
+						</div>
+						<div class="pricetr">
+							<div class="usluga">1 сеанс</div>
+							<div class="coast">200 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">10 сеансов</div>
+							<div class="coast">1400 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">15 сеансов</div>
+							<div class="coast">2000 ₽</div>
+						</div>
+						<div class="priceline"></div>
+						<div class="pricetr">
+							<div class="usluga">20 сеансов</div>
+							<div class="coast">2400 ₽</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="coaches" style="background-color: #ffffff;"  id="mi2">
+			<h1 align="center" class="body-hdr">Инструкторы</h1>
+			<div class="trainers">
+				<div class="trainers_item">
+					<div class="trainers_img"><img src="photos/coaches/coach1.jpg" style="border-radius: 50%; width: 65%; height: 65%;"></div>
+					<div class="trainers_name">Марина Анатольевна</div>
+					<div class="trainers_description">Педагог по специальности "Физическая культура", квалифицированный медицинский специалист</div>
+				</div>
+				<div class="trainers_item">
+					<div class="trainers_img"><img src="photos/coaches/coach2.jpg" style="border-radius: 50%; width: 65%; height: 65%;"></div>
+					<div class="trainers_name">Денис Александрович</div>
+					<div class="trainers_description">Мастер спорта по плаванию, педагог по физической культуре и спорту, тренерский стаж более 5 лет</div>
+				</div>
+				<div class="trainers_item">
+					<div class="trainers_img"><img src="photos/coaches/coach3.jpg" style="border-radius: 50%; width: 65%; height: 65%;"></div>
+					<div class="trainers_name">Людмила Пантелеевна</div>
+					<div class="trainers_description">Мастер спорта СССР, отличник физической культуры, педагог, тренерский стаж более 15 лет</div>
+				</div>
+			</div>
+		</div>
+		<div class="gallery" id="mi3">
+			<h1 align="center" class="body-hdr">Галерея</h1>
+			<div class="gallery_slider">
+				<div class="gallery_item">
+					<img src="photos/gallery/gallery1.jpg" style="width: 380px; height: 250px; margin: 0 auto;" align="center">
+				</div>
+				<div class="gallery_item">
+					<img src="photos/gallery/gallery2.jpg" style="width: 380px; height: 250px; margin: 0 auto;" align="center">
+				</div>
+				<div class="gallery_item">
+					<img src="photos/gallery/gallery3.jpg" style="width: 380px; height: 250px; margin: 0 auto;" align="center">
+				</div>
+				<div class="gallery_item">
+					<img src="photos/gallery/gallery4.jpg" style="width: 380px; height: 250px; margin: 0 auto;" align="center">
+				</div>
+				<div class="gallery_item">
+					<img src="photos/gallery/gallery5.jpg" style="width: 380px; height: 250px; margin: 0 auto;" align="center">
+				</div>
+				<div class="gallery_item">
+					<img src="photos/gallery/gallery6.jpg" style="width: 380px; height: 250px; margin: 0 auto;" align="center">
+				</div>
+				<div class="gallery_item">
+					<img src="photos/gallery/gallery7.jpg" style="width: 380px; height: 250px; margin: 0 auto;" align="center">
+				</div>
+			</div>	
+		</div>
+		<div class="contacts" id="mi4">
+			<h1 align="center" class="body-hdr" style="color: #fff;">Контакты</h1>
+			<div class="contacts-tbl">
+				<div class="contacts-tbl-left">
+					<div class="contacts-tbl-element">
+						<img src="photos/icons/call_icon88.png" class="contacts-tbl-element-icon">
+						<p class="contacts-tbl-element-txt">+7-952-920-72-66</p>
+					</div>
+					<div class="contacts-tbl-element">
+						<img src="photos/icons/telelogo_big.png" class="contacts-tbl-element-icon" style="width: 48px; height: 48px;">
+						<p class="contacts-tbl-element-txt">@rucheek_nsk</p>
+					</div>
+					<div class="contacts-tbl-element">
+						<img src="photos/icons/inst_icon48.png" class="contacts-tbl-element-icon">
+						<p class="contacts-tbl-element-txt">@rucheek.nsk</p>
+					</div>
+					<div class="contacts-tbl-element">
+						<img src="photos/icons/email_icon88.png" class="contacts-tbl-element-icon">
+						<p class="contacts-tbl-element-txt">rucheek@nsk.ru</p>
+					</div>
+					<div class="contacts-tbl-element">
+						<img src="photos/icons/geo_icon88.png" class="contacts-tbl-element-icon">
+						<p class="contacts-tbl-element-txt">г.Новосибирск, ул. Крылова, д. 20</p>
+					</div>
+				</div>
+				<div class="contacts-tbl-right">
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae728d79d1b361d19f82760939f82883327e413019fe9ade377d1fa93f7834ccc&amp;width=500&amp;height=308&amp;lang=ru_RU&amp;scroll=true"></script>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
