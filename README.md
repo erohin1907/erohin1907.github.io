@@ -1,1 +1,0 @@
-# rucheek.github.io
